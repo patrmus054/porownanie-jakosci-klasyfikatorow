@@ -7,10 +7,10 @@ from sklearn.metrics import roc_curve
 from sklearn.metrics import roc_auc_score
 from sklearn.metrics import precision_score, recall_score
 
-logisticData = pd.read_csv('logistyczna.csv', sep=',')
+logistic_data = pd.read_csv('logistyczna.csv', sep=',')
 
-x = logisticData[['gre', 'gpa', 'rank']]
-y = logisticData[['admit']]
+x = logistic_data[['gre', 'gpa', 'rank']]
+y = logistic_data[['admit']]
 x_train, x_test, y_train, y_test = train_test_split(x,   y,   test_size=0.4,  random_state=0)
 
 reg_classifier = LogisticRegression(random_state=0).fit(x, y)
